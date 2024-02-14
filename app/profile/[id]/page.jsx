@@ -5,10 +5,9 @@ import { useSearchParams } from "next/navigation";
 
 import Profile from "@components/Profile";
 
-// User Profile
 const UserProfile = ({ params }) => {
   const searchParams = useSearchParams();
-  const userName = searchParams.get('name');
+  const userName = searchParams.get("name");
 
   const [userPosts, setUserPosts] = useState([]);
 
@@ -21,12 +20,12 @@ const UserProfile = ({ params }) => {
     };
 
     if (params?.id) fetchPosts();
-  }, [params?.id]);
+  }, [params.id]);
 
   return (
     <Profile
-      name='My'
-      desc='Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination'
+      name={userName}
+      desc={`Welcome to ${userName}'s personalized profile page. Explore ${userName}'s exceptional prompts and be inspired by the power of their imagination`}
       data={userPosts}
     />
   );
