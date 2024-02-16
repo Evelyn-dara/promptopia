@@ -7,7 +7,7 @@ import Form from "@components/Form";
 
 const UpdatePrompt = () => {
   const router = useRouter();
-   const searchParams = new URLSearchParams(window.location.search);
+   const searchParams = new URLSearchParams();
     const promptId = searchParams.get("id");
 
   const [post, setPost] = useState({ prompt: "", tag: "", });
